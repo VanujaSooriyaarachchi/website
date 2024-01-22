@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+        }
+        #container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #ff69b4;
+            margin-bottom: 20px;
+        }
+        #profileImage {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #333333;
+            margin-bottom: 30px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.5s ease-in-out;
+            margin: 0 10px;
+        }
+        #noButton {
+            background-color: #87CEEB;
+        }
+        #yesButton {
+            background-color: #90EE90;
+        }
+        #yesButton:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="profileImage" src="Images/princess.jpg" alt="Profile Image"> 
+        <h1>Hey Amy,</h1>
+        <p>Are you a little bit mad at me, or am I just imagining things?</p>
+        <button id="noButton" onclick="displayMessage('No')">No</button>
+        <button id="yesButton" onclick="moveButton()">Yes</button>
+    </div>
+
+    <script>
+        function displayMessage(answer) {
+            if (answer === 'No') {
+                alert("I think you're amazing! 😊");
+            } else if (answer === 'Yes') {
+                moveButton();
+            }
+        }
+
+        function moveButton() {
+            var yesButton = document.getElementById('yesButton');
+            yesButton.style.position = 'absolute';
+            yesButton.style.left = Math.random() * window.innerWidth + 'px';
+            yesButton.style.top = Math.random() * window.innerHeight + 'px';
+        }
+    </script>
+</body>
+</html>
